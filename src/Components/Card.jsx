@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Card = ({ book }) => {
+const Card = ({ book,handleSelected }) => {
   return (
     <div>
       <div className="card card-compact bg-base-100 py-2">
@@ -10,10 +10,10 @@ const Card = ({ book }) => {
         <div className="card-body mx-auto">
           <h2 className="card-title">{book.bookTitle}</h2>
           <h2 className="card-title">{book.bookAuthor}</h2>
-          <h2 className="card-title mx-auto">Price: {book.bookPrice} tk</h2>
+          <h2 className="card-title mx-auto">Price: {book.bookPrice} Tk</h2>
           
           <div className="card-actions justify-center">
-            <button className="btn btn-primary">select</button>
+            <button onClick={()=>{handleSelected(book)}} className="btn btn-outline btn-secondary">select</button>
           </div>
         </div>
       </div>
@@ -22,7 +22,8 @@ const Card = ({ book }) => {
 };
 
 Card.propTypes = {
-  book: PropTypes.array,
+    book: PropTypes.array,
+    handleSelected:PropTypes.func
 };
 
 export default Card;
