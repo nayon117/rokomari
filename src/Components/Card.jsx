@@ -13,7 +13,7 @@ const Card = ({ book,handleSelected }) => {
           <h2 className="card-title mx-auto">Price: {book.bookPrice} Tk</h2>
           
           <div className="card-actions justify-center">
-            <button onClick={()=>{handleSelected(book)}} className="btn btn-outline btn-secondary">select</button>
+            <button onClick={()=>{handleSelected(book)}} className="btn btn-outline btn-primary">select</button>
           </div>
         </div>
       </div>
